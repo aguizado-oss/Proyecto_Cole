@@ -1,5 +1,6 @@
 import { BookOpen, CalendarDays, ClipboardList, CreditCard, Library, Sparkles } from "lucide-react";
 import type { SessionUser } from "../../types";
+import { WeatherWidget } from "./WeatherWidget";
 
 export function HomePage({ user }: { user: SessionUser }) {
   const cards = [
@@ -21,6 +22,15 @@ export function HomePage({ user }: { user: SessionUser }) {
             <p className="mt-4 text-xs text-slate-400">{label}</p><p className="mt-1 text-sm font-bold text-[#19345D]">{value}</p>
           </div>
         ))}
+      </div>
+
+      {/* Clima en tiempo real – Huancayo, Junín */}
+      <div className="mt-6">
+        <div className="mb-3 flex items-center gap-2">
+          <span className="text-sm font-bold text-[#19345D]">Clima en Huancayo</span>
+          <span className="rounded-full bg-[#EAF5F1] px-2 py-0.5 text-[10px] font-semibold text-[#287665]">En vivo</span>
+        </div>
+        <WeatherWidget />
       </div>
     </div>
   );

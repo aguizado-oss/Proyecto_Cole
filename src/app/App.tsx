@@ -8,6 +8,7 @@ import { CalendarPage } from "./features/calendar/CalendarPage";
 import { HomePage, PlaceholderPage } from "./features/common/CommonPages";
 import { CourseDetailPage } from "./features/courses/CourseDetailPage";
 import { CoursesPage } from "./features/courses/CoursesPage";
+import { PaymentsPage } from "./features/payments/PaymentsPage";
 import type { SessionUser } from "./types";
 
 export default function App() {
@@ -24,7 +25,7 @@ export default function App() {
             <Route path="calendario" element={<CalendarPage />} />
             <Route path="cursos" element={<CoursesPage user={user} />} />
             <Route path="cursos/:courseId" element={<CourseDetailPage user={user} />} />
-            <Route path="pagos" element={<PlaceholderPage type="pagos" />} />
+            <Route path="pagos" element={<PaymentsPage />} />
             <Route path="tramites" element={<PlaceholderPage type="tramites" />} />
             <Route path="mas" element={<PlaceholderPage type="mas" />} />
             <Route path="admin" element={user.role === "admin" ? <AdminAcademicPage /> : <Navigate to="/" replace />} />
